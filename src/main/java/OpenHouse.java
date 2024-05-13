@@ -2,7 +2,7 @@
 import javax.persistence.*;
 @Entity
 @Table(name = "OPENHOUSE")
-public class OpenHouse {
+public class OpenHouse extends Round {
     @Column(name = "NAME", nullable = false)
     private String name;
 
@@ -14,10 +14,12 @@ public class OpenHouse {
     @Column(name = "DORM", nullable = false)
     private String dorm;
 
-    @Id
-    @Column(name = "Question")
-    private String question;
-
     @Embedded
     private Photo photo;
+
+    public OpenHouse(){}
+
+    public OpenHouse(String fn, String ln, String number, String dorm, Photo photo) throws Exception {
+        super(fn,ln,number,dorm,photo);
+    }
 }

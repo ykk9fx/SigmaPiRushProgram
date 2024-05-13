@@ -5,5 +5,4 @@ public class Photo {
     @Column(name = "image_data", nullable = false)
     private byte[] imageData;
 
-    // Constructors, getters, setters, etc.
 }
