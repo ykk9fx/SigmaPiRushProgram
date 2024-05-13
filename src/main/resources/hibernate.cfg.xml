@@ -4,11 +4,12 @@
         <property name="format_sql">false</property>
         <property name="dialect">org.sqlite.hibernate.dialect.SQLiteDialect</property>
         <property name="connection.driver_class">org.sqlite.JDBC</property>
-        <property name="connection.url">jdbc:sqlite:db</property>
+        <property name="connection.url">jdbc:sqlite:rushdb</property>
         <property name="hibernate.current_session_context_class">thread</property>
         <property name="hibernate.hbm2ddl.auto" >update</property>
-        <mapping class="" />
-        <mapping class="" />
-        <mapping class="" />
+        <mapping class="OpenHouse" />
+        <mapping class="FirstRound" />
+        <mapping class="SecondRound" />
+        <mapping class="ThirdRound" />
     </session-factory>
 </hibernate-configuration>

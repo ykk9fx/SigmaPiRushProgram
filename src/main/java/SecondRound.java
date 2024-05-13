@@ -1,7 +1,7 @@
 import javax.persistence.*;
 @Entity
-@Table(name = "FIRSTROUND")
-public class FirstRound extends Round{
+@Table(name = "SECONDROUND")
+public class SecondRound extends Round{
     @Column(name = "NAME", nullable = false)
     private String name;
 
@@ -34,14 +34,14 @@ public class FirstRound extends Round{
     @Column(name = "NOTES")
     private String notes;
 
-    public FirstRound(String name, String number, String dorm, Photo photo){
+    public SecondRound(String name, String number, String dorm, Photo photo){
         this.name = name;
         this.phonenumber = number;
         this.dorm = dorm;
         this.photo = photo;
     }
 
-    public FirstRound() {}
+    public SecondRound() {}
 
     public String getBrother(){
         return this.brother;
@@ -106,7 +106,8 @@ public class FirstRound extends Round{
         this.question3 = str;
     }
 
-    public SecondRound push(){
-        return new SecondRound(this.name, this.phonenumber, this.dorm, this.photo);
+    public ThirdRound push(){
+        return new ThirdRound(this.name, this.phonenumber, this.dorm, this.photo);
     }
 }
+    

@@ -22,4 +22,8 @@ public class OpenHouse extends Round {
     public OpenHouse(String fn, String ln, String number, String dorm, Photo photo) throws Exception {
         super(fn,ln,number,dorm,photo);
     }
+
+    public FirstRound push(){
+        return new FirstRound(this.name, this.phonenumber, this.dorm, this.photo);
+    }
 }

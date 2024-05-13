@@ -1,7 +1,7 @@
 import javax.persistence.*;
 @Entity
-@Table(name = "FIRSTROUND")
-public class FirstRound extends Round{
+@Table(name = "THIRDROUND")
+public class ThirdRound extends Round {
     @Column(name = "NAME", nullable = false)
     private String name;
 
@@ -34,79 +34,77 @@ public class FirstRound extends Round{
     @Column(name = "NOTES")
     private String notes;
 
-    public FirstRound(String name, String number, String dorm, Photo photo){
+    public ThirdRound(String name, String number, String dorm, Photo photo) {
         this.name = name;
         this.phonenumber = number;
         this.dorm = dorm;
         this.photo = photo;
     }
 
-    public FirstRound() {}
+    public ThirdRound() {
+    }
 
-    public String getBrother(){
+    public String getBrother() {
         return this.brother;
     }
 
-    public void setBrother(String str){
+    public void setBrother(String str) {
         this.brother = str;
     }
 
-    public int getAttendance(){
+    public int getAttendance() {
         return this.attendance;
     }
 
-    public void setAttendance(int i){
+    public void setAttendance(int i) {
         this.attendance = i;
     }
 
-    public String getQuestion1(){
+    public String getQuestion1() {
         return this.question1;
     }
 
-    public void setQuestion1(String str){
+    public void setQuestion1(String str) {
         this.question1 = str;
     }
 
-    public String getQuestion2(){
+    public String getQuestion2() {
         return this.question2;
     }
 
-    public void setQuestion2(String str){
+    public void setQuestion2(String str) {
         this.question2 = str;
     }
 
-    public String getQuestion3(){
+    public String getQuestion3() {
         return this.question3;
     }
 
-    public void setQuestion3(String str){
+    public void setQuestion3(String str) {
         this.question3 = str;
     }
 
-    public String getNotes(){
+    public String getNotes() {
         return this.notes;
     }
 
-    public void setNotes(String str){
+    public void setNotes(String str) {
         this.notes += str + " ";
     }
 
-    public void registerForEvent1(String str){
+    public void registerForEvent1(String str) {
         this.attendance++;
         this.question1 = str;
     }
 
-    public void registerForEvent2(String str){
+    public void registerForEvent2(String str) {
         this.attendance++;
         this.question2 = str;
     }
 
-    public void registerForEvent3(String str){
+    public void registerForEvent3(String str) {
         this.attendance++;
         this.question3 = str;
     }
-
-    public SecondRound push(){
-        return new SecondRound(this.name, this.phonenumber, this.dorm, this.photo);
-    }
 }
+
