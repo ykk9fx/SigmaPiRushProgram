@@ -60,5 +60,61 @@ public class ExcelExporter {
         }
     }
 
+    public void ExportSecondRound(List<SecondRound> secondRoundList){
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Second Round Data");
+        Row headerRow = sheet.createRow(0);
+        headerRow.createCell(0).setCellValue("Brother");
+        headerRow.createCell(1).setCellValue("Name");
+        headerRow.createCell(2).setCellValue("Phone Number");
+        headerRow.createCell(3).setCellValue("Notes");
+        int rowNum = 1;
+        for (SecondRound sr : secondRoundList) {
+            Row row = sheet.createRow(rowNum++);
+            row.createCell(0).setCellValue(sr.getBrother());
+            row.createCell(1).setCellValue(sr.getName());
+            row.createCell(2).setCellValue(sr.getPhoneNumber());
+            row.createCell(3).setCellValue(sr.getNotes());
+        }
+        try (FileOutputStream fileOut = new FileOutputStream("RushData.xlsx")) {
+            workbook.write(fileOut);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            workbook.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void ExportThirdRound(List<ThirdRound> thirdRoundList){
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Third Round Data");
+        Row headerRow = sheet.createRow(0);
+        headerRow.createCell(0).setCellValue("Brother");
+        headerRow.createCell(1).setCellValue("Name");
+        headerRow.createCell(2).setCellValue("Phone Number");
+        headerRow.createCell(3).setCellValue("Notes");
+        int rowNum = 1;
+        for (ThirdRound tr : thirdRoundList) {
+            Row row = sheet.createRow(rowNum++);
+            row.createCell(0).setCellValue(tr.getBrother());
+            row.createCell(1).setCellValue(tr.getName());
+            row.createCell(2).setCellValue(tr.getPhoneNumber());
+            row.createCell(3).setCellValue(tr.getNotes());
+        }
+        try (FileOutputStream fileOut = new FileOutputStream("RushData.xlsx")) {
+            workbook.write(fileOut);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            workbook.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 }
